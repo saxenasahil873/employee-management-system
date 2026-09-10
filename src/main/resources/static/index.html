@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleOS | Employee Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+    <header class="topbar">
+        <div><p class="eyebrow">PeopleOS</p><h1>Employee directory</h1></div>
+        <button class="primary" id="open-create">+ Add employee</button>
+    </header>
+    <section class="stats">
+        <article><span>Total employees</span><strong id="total-count">-</strong></article>
+        <article><span>Departments</span><strong id="department-count">-</strong></article>
+        <article><span>Average salary</span><strong id="average-salary">-</strong></article>
+    </section>
+    <section class="panel">
+        <div class="toolbar"><div><h2>All employees</h2><p>Manage your people, roles, and departments.</p></div><input id="search" type="search" placeholder="Search employees..."></div>
+        <div class="table-wrap"><table><thead><tr><th>Employee</th><th>Role</th><th>Department</th><th>Hire date</th><th>Salary</th><th></th></tr></thead><tbody id="employee-rows"></tbody></table><p class="empty" id="empty">No employees found.</p></div>
+    </section>
+</main>
+<div class="modal hidden" id="modal"><form class="dialog" id="employee-form"><div class="dialog-head"><div><p class="eyebrow">Directory</p><h2 id="form-title">Add employee</h2></div><button type="button" class="close" id="close-modal">×</button></div><input type="hidden" id="employee-id"><div class="grid"><label>First name<input required maxlength="80" id="firstName" name="firstName"></label><label>Last name<input required maxlength="80" id="lastName" name="lastName"></label><label>Email<input required type="email" maxlength="160" id="email" name="email"></label><label>Phone<input maxlength="30" id="phone" name="phone"></label><label>Job title<input required maxlength="120" id="jobTitle" name="jobTitle"></label><label>Salary<input required min="0" step="0.01" type="number" id="salary" name="salary"></label><label>Hire date<input required type="date" id="hireDate" name="hireDate"></label><label>Department<select required id="departmentId" name="departmentId"></select></label><label>Role<select required id="roleId" name="roleId"></select></label></div><p class="form-error" id="form-error"></p><div class="actions"><button type="button" class="secondary" id="cancel">Cancel</button><button class="primary">Save employee</button></div></form></div>
+<script src="app.js"></script>
+</body>
+</html>
