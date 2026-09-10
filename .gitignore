@@ -1,0 +1,8 @@
+target/
+.idea/
+*.iml
+.DS_Store
+
+# Local database credentials
+application-local.properties
+application-local.yml
